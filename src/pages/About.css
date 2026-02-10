@@ -1,0 +1,193 @@
+.about-page {
+  min-height: 100vh;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  color: var(--text-light);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+.story-section {
+  background: var(--bg-white);
+  padding: 5rem 2rem;
+}
+
+.story-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.story-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.story-content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+.mission-section {
+  background: var(--bg-light);
+  padding: 5rem 2rem;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.mission-card {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.mission-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.mission-card p {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.values-section {
+  background: var(--bg-white);
+  padding: 5rem 2rem;
+}
+
+.values-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.value-item {
+  padding: 2rem;
+  background: var(--bg-light);
+  border-radius: 1rem;
+  border-left: 4px solid var(--primary-green);
+}
+
+.value-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.value-item p {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.team-section {
+  background: var(--bg-light);
+  padding: 5rem 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.team-member {
+  background: var(--bg-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.member-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--bg-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 1rem;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.member-role {
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.member-bio {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.impact-section {
+  background: var(--bg-white);
+  padding: 5rem 2rem;
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.impact-stat {
+  text-align: center;
+}
+
+.impact-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.impact-label {
+  font-size: 1rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
