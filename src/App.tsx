@@ -3,7 +3,6 @@ import './App.css';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Learn from './pages/Learn';
-import About from './pages/About';
 import Contact from './pages/Contact';
 import Checkout from './pages/Checkout';
 
@@ -37,8 +36,6 @@ function App() {
         return <Shop addToCart={addToCart} setCurrentPage={setCurrentPage} />;
       case 'learn':
         return <Learn />;
-      case 'about':
-        return <About />;
       case 'contact':
         return <Contact />;
       case 'checkout':
@@ -65,7 +62,6 @@ function App() {
           <nav className="nav">
             <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('shop'); }}>Shop</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('learn'); }}>Learn</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); }}>About</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('contact'); }}>Contact</a>
           </nav>
 
@@ -118,7 +114,6 @@ function App() {
               <ul>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('shop'); }}>Shop</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('learn'); }}>Learn</a></li>
-                <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); }}>About</a></li>
                 <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('contact'); }}>Contact</a></li>
               </ul>
             </div>
