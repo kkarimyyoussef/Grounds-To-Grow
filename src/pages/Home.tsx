@@ -1,6 +1,10 @@
 import './Home.css';
 
-function Home() {
+interface HomeProps {
+  setCurrentPage: (page: string) => void;
+}
+
+function Home({ setCurrentPage }: HomeProps) {
   return (
     <>
       {/* Hero Section */}
@@ -11,8 +15,8 @@ function Home() {
             Science-backed vermicomposting turns spent coffee grounds into pet-safe, nutrient-rich soil amendments for urban gardeners.
           </p>
           <div className="hero-cta">
-            <a href="#shop" className="btn btn-primary">Shop Now</a>
-            <a href="#learn" className="btn btn-secondary">Learn More</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('shop'); }} className="btn btn-primary">Shop Now</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('learn'); }} className="btn btn-secondary">Learn More</a>
           </div>
         </div>
         <div className="hero-image">
@@ -152,7 +156,7 @@ function Home() {
         <div className="container">
           <h2 className="cta-title">Ready to Transform Your Garden?</h2>
           <p className="cta-text">Join thousands of urban gardeners using Grounds to Grow compost</p>
-          <a href="#shop" className="btn btn-primary btn-large">Shop Now</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('shop'); }} className="btn btn-primary btn-large">Shop Now</a>
         </div>
       </section>
     </>
@@ -160,4 +164,3 @@ function Home() {
 }
 
 export default Home;
-

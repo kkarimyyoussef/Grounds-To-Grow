@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
@@ -7,12 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -25,7 +20,7 @@ function App() {
       case 'contact':
         return <Contact />;
       default:
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
     }
   };
 
@@ -40,8 +35,7 @@ function App() {
       <header className="header">
         <div className="header-container">
           <div className="logo" onClick={() => setCurrentPage('home')} style={{ cursor: 'pointer' }}>
-            <img src="public/logo1.png" alt="Grounds to Grow" className="logo-img" />
-            <span className="logo-text">Grounds to Grow</span>
+            <img src="public/newLogo.png" alt="Grounds to Grow" className="logo-img" />
           </div>
           
           <nav className="nav">
@@ -70,9 +64,6 @@ function App() {
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
-            </button>
-            <button className="theme-toggle" onClick={() => setIsDark(!isDark)} aria-label="Toggle theme">
-              {isDark ? '☀️' : '🌙'}
             </button>
           </div>
         </div>
