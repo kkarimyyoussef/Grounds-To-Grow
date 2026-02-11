@@ -42,7 +42,7 @@ function Shop({ addToCart, setCurrentPage }: ShopProps) {
                   className={`thumbnail ${selectedImage === 'front' ? 'active' : ''}`}
                   onClick={() => setSelectedImage('front')}
                 >
-                  <img src="/front of coffee bag.png" alt="Front of package" />
+                  <img src="front of coffee bag.png" alt="Front of package" />
                 </button>
                 <button 
                   className={`thumbnail ${selectedImage === 'back' ? 'active' : ''}`}
@@ -80,7 +80,7 @@ function Shop({ addToCart, setCurrentPage }: ShopProps) {
 
               <div className="product-specs">
                 <div className="spec-item">
-                  <strong>Size:</strong> 1 pod (30g)
+                  <strong>Size:</strong> 1 bag (360g)
                 </div>
                 <div className="spec-item">
                   <strong>Covers:</strong> 1-2 pots (10-12 inches)
