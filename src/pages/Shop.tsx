@@ -14,7 +14,7 @@ function Shop() {
             <div className="product-images">
               <div className="main-image">
                 <img 
-                  src={selectedImage === 'front' ? '/front of coffee bag.png' : '/backofcoffee bag.png'} 
+                  src={selectedImage === 'front' ? 'front of coffee bag.png' : 'backofcoffee bag.png'} 
                   alt="Grounds to Grow Coffee Compost" 
                 />
               </div>
