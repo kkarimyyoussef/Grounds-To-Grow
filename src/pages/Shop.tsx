@@ -14,7 +14,7 @@ function Shop() {
             <div className="product-images">
               <div className="main-image">
                 <img 
-                  src={selectedImage === 'front' ? 'public/front of coffee bag.png' : 'public/backofcoffee bag.png'} 
+                  src={selectedImage === 'front' ? '/front of coffee bag.png' : '/backofcoffee bag.png'} 
                   alt="Grounds to Grow Coffee Compost" 
                 />
               </div>
@@ -23,13 +23,13 @@ function Shop() {
                   className={`thumbnail ${selectedImage === 'front' ? 'active' : ''}`}
                   onClick={() => setSelectedImage('front')}
                 >
-                  <img src="public/front of coffee bag.png" alt="Front of package" />
+                  <img src="front of coffee bag.png" alt="Front of package" />
                 </button>
                 <button 
                   className={`thumbnail ${selectedImage === 'back' ? 'active' : ''}`}
                   onClick={() => setSelectedImage('back')}
                 >
-                  <img src="public/backofcoffee bag.png" alt="Back of package" />
+                  <img src="backofcoffee bag.png" alt="Back of package" />
                 </button>
               </div>
             </div>
