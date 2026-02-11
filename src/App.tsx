@@ -59,7 +59,7 @@ function App() {
       <header className="header">
         <div className="header-container">
           <div className="logo" onClick={() => setCurrentPage('home')} style={{ cursor: 'pointer' }}>
-            <img src="/newLogo.png" alt="Grounds to Grow" className="logo-img" />
+            <img src="newLogo.png" alt="Grounds to Grow" className="logo-img" />
           </div>
           
           <nav className="nav">
