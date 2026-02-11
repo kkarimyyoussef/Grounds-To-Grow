@@ -1,9 +1,28 @@
 import { useState } from 'react';
 import './Shop.css';
 
-function Shop() {
+interface ShopProps {
+  addToCart: (item: { name: string; price: number; quantity: number; image: string }) => void;
+  setCurrentPage: (page: string) => void;
+}
+
+function Shop({ addToCart, setCurrentPage }: ShopProps) {
   const [selectedImage, setSelectedImage] = useState('front');
   const [quantity, setQuantity] = useState(1);
+
+  const handleAddToCart = () => {
+    addToCart({
+      name: 'Grounds to Grow Premium Vermicompost',
+      price: 10.00,
+      quantity: quantity,
+      image: '/front of coffee bag.png'
+    });
+  };
+
+  const handleBuyNow = () => {
+    handleAddToCart();
+    setCurrentPage('checkout');
+  };
 
   return (
     <div className="shop-page">
@@ -14,7 +33,7 @@ function Shop() {
             <div className="product-images">
               <div className="main-image">
                 <img 
-                  src={selectedImage === 'front' ? 'front of coffee bag.png' : 'backofcoffee bag.png'} 
+                  src={selectedImage === 'front' ? '/front of coffee bag.png' : '/backofcoffee bag.png'} 
                   alt="Grounds to Grow Coffee Compost" 
                 />
               </div>
@@ -23,13 +42,13 @@ function Shop() {
                   className={`thumbnail ${selectedImage === 'front' ? 'active' : ''}`}
                   onClick={() => setSelectedImage('front')}
                 >
-                  <img src="front of coffee bag.png" alt="Front of package" />
+                  <img src="/front of coffee bag.png" alt="Front of package" />
                 </button>
                 <button 
                   className={`thumbnail ${selectedImage === 'back' ? 'active' : ''}`}
                   onClick={() => setSelectedImage('back')}
                 >
-                  <img src="backofcoffee bag.png" alt="Back of package" />
+                  <img src="/backofcoffee bag.png" alt="Back of package" />
                 </button>
               </div>
             </div>
@@ -39,7 +58,6 @@ function Shop() {
               <h1 className="product-title">Grounds to Grow Premium Vermicompost</h1>
               <div className="product-rating">
                 <span className="stars">★★★★★</span>
-                <span className="rating-text">(4.8) · 127 reviews</span>
               </div>
               
               <div className="product-price-section">
@@ -102,8 +120,8 @@ function Shop() {
               </div>
 
               <div className="product-actions">
-                <button className="btn btn-primary btn-large">Add to Cart</button>
-                <button className="btn btn-secondary btn-large">Buy Now</button>
+                <button className="btn btn-primary btn-large" onClick={handleAddToCart}>Add to Cart</button>
+                <button className="btn btn-secondary btn-large" onClick={handleBuyNow}>Buy Now</button>
               </div>
 
               <div className="shipping-info">

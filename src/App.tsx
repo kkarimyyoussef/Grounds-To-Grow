@@ -5,20 +5,44 @@ import Shop from './pages/Shop';
 import Learn from './pages/Learn';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Checkout from './pages/Checkout';
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  const addToCart = (item: Omit<CartItem, 'id'>) => {
+    const newItem: CartItem = {
+      ...item,
+      id: Date.now().toString(),
+    };
+    setCart([...cart, newItem]);
+  };
+
+  const getCartCount = () => {
+    return cart.reduce((count, item) => count + item.quantity, 0);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
       case 'shop':
-        return <Shop />;
+        return <Shop addToCart={addToCart} setCurrentPage={setCurrentPage} />;
       case 'learn':
         return <Learn />;
       case 'about':
         return <About />;
       case 'contact':
         return <Contact />;
+      case 'checkout':
+        return <Checkout cart={cart} setCurrentPage={setCurrentPage} />;
       default:
         return <Home setCurrentPage={setCurrentPage} />;
     }
@@ -35,7 +59,7 @@ function App() {
       <header className="header">
         <div className="header-container">
           <div className="logo" onClick={() => setCurrentPage('home')} style={{ cursor: 'pointer' }}>
-            <img src="newLogo.png" alt="Grounds to Grow" className="logo-img" />
+            <img src="/newLogo.png" alt="Grounds to Grow" className="logo-img" />
           </div>
           
           <nav className="nav">
@@ -58,12 +82,19 @@ function App() {
                 <circle cx="12" cy="7" r="4"/>
               </svg>
             </button>
-            <button className="icon-btn" aria-label="Cart">
+            <button 
+              className="icon-btn cart-btn" 
+              aria-label="Cart"
+              onClick={() => setCurrentPage('checkout')}
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                 <line x1="3" y1="6" x2="21" y2="6"/>
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
+              {getCartCount() > 0 && (
+                <span className="cart-badge">{getCartCount()}</span>
+              )}
             </button>
           </div>
         </div>
