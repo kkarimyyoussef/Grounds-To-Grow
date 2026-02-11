@@ -20,7 +20,7 @@ function Home({ setCurrentPage }: HomeProps) {
           </div>
         </div>
         <div className="hero-image">
-          <img src="public/frontPageImage.png" alt="Vermicomposting bins with rich soil"/>
+          <img src="frontPageImage.png" alt="Vermicomposting bins with rich soil"/>
         </div>
       </section>
 
